@@ -1,5 +1,14 @@
 == README
 
+## TODO
+
+- create github org
+- create new repo
+- create gh-pages branch
+- create jekyll blog
+- fix base-url
+- push to repo
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
