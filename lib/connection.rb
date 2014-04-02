@@ -18,6 +18,15 @@ class Connection
     @rate_limit = response.headers[:'x-ratelimit-remaining'].to_i
   end
 
+  def create_repo(name)
+    options = { :organization => "lanyon-io" }
+    begin
+      @client.create_repository name, options
+    rescue
+      "error"
+    end
+  end
+
   private
 
   def get_username
