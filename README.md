@@ -2,8 +2,8 @@
 
 ## TODO
 
-- create github org
-- create new repo
++ create github org
++ create new repo
 - create gh-pages branch
 - create jekyll blog
 - fix base-url
