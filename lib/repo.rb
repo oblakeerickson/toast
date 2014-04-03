@@ -30,6 +30,17 @@ class Repo
     end
   end
 
+  def create_branch(name)
+    my_repo = repo name
+    @client.create_ref(my_repo, "heads/gh-pages", "827efc6d56897b048c772eb4087f854f46256132")
+  end
+
+  def set_default_branch(name)
+    options = { :default_branch => 'gh-pages' }
+    my_repo = repo name
+    @client.edit_repository(my_repo, options) ? true : false
+  end
+
   private
 
   def repo(name)

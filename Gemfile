@@ -21,6 +21,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'octokit', '~> 2.0'
+gem 'git'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
