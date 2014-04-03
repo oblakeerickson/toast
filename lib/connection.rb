@@ -4,6 +4,10 @@ class Connection
     @client = Octokit::Client.new :login => get_username, :password => get_password
   end
 
+  def client
+    @client
+  end
+
   def username
     @client.login
   end
@@ -16,15 +20,6 @@ class Connection
     @client.user username
     response = @client.last_response
     @rate_limit = response.headers[:'x-ratelimit-remaining'].to_i
-  end
-
-  def create_repo(name)
-    options = { :organization => "lanyon-io" }
-    begin
-      @client.create_repository name, options
-    rescue
-      "error"
-    end
   end
 
   private

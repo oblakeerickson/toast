@@ -1,8 +1,8 @@
 namespace :repo do
   desc "Create GitHub repo"
   task populate: :environment do
-    connection = Connection.new
-    repo = connection.create_repo "pickle3"
-    puts repo
+    repo = Repo.new
+    new_repo = repo.create "pickle6"
+    puts new_repo
   end
 end
