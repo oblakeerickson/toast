@@ -8,6 +8,11 @@ describe LocalRepo do
 
 	subject { @local_repo }
 
+	it "contains the default theme" do
+		yml = YAML::load_file("/Users/blake/repo/lanyon-io/test_repo/_config.yml")
+		expect(yml['title']).to eq 'Hyde'
+	end
+
 	it "creates a gh-pages branch" do
 		status = @local_repo.create_gh_pages_branch
 		expect(status).to eq "Switched to branch 'gh-pages'"
