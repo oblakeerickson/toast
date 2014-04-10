@@ -28,24 +28,6 @@ describe Repo do
 		expect(status).to be true
 	end
 
-	it "creates a branch" do
-		my_repo = @repo.create @test_repo
-		status = @repo.create_branch 'gh-pages'
-		expect(status).to be true
-	end
-
-	it "clones default theme repo" do
-		status = @repo.clone @test_repo
-		expect(status).to be true
-	end
-
-	# it "sets the default branch" do
-	# 	my_repo = @repo.create @test_repo
-	# 	status = @repo.set_default_branch 'gh-pages'
-	# 	expect(status).to be true
-	# 	@repo.delete my_repo.name
-	# end
-
 	after do
 		@test_repo = "test_repo"
 		if @repo.exists? @test_repo

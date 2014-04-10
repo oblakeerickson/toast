@@ -21,3 +21,4 @@ class LocalRepo
 		"#{@path}/#{@org}/#{name}"
 	end
 end
+

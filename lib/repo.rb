@@ -30,16 +30,6 @@ class Repo
     end
   end
 
-  def clone(name)
-    url = "git@github.com:poole/hyde.git"
-    path = "/Users/blake/repo/#{@org}/#{name}"
-    @g = Git.clone(url, path)
-  end
-
-  def gh_pages
-    @g.branch('gh-pages').checkout
-  end
-
   private
 
   def repo(name)
