@@ -10,10 +10,10 @@
 + change default theme
 + fix base-url
    + add baseurl to _config.yml
-   + add baseurl to css links
-   + add baseurl to title link
-   + add baseurl to home page link
-   + add baseurl to posts link in index.html
+   - add baseurl to css links
+   - add baseurl to title link
+   - add baseurl to home page link
+   - add baseurl to posts link in index.html
 + push repo to GitHub
 - buy domain name
 - create email address
