@@ -13,6 +13,22 @@ class Baseurl
 		save(yml)
 	end
 
+	def change_head
+		contents = IO.readlines("#{@full_path}/_includes/head.html")
+
+		file = File.open("#{@full_path}/_includes/head.html", 'w')
+
+		contents.each do |line|
+			if line.include? "poole.css"
+				file.write('<link rel="stylesheet" href="{{ site.baseurl }}/public/css/poole.css">')
+			else
+				file.write(line)
+			end
+		end
+
+		file.close
+	end
+
 	private
 
 	def load
