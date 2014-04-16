@@ -3,13 +3,16 @@ require 'spec_helper'
 describe LocalRepo do
 
 	before do
-		@local_repo = LocalRepo.new("test_repo")
+		@path = '/Users/blake/repo/'
+		@org = 'lanyon-io'
+		@name = 'test_repo'
+		@local_repo = LocalRepo.new(@path, @org, @name)
 	end
 
 	subject { @local_repo }
 
 	it "contains the default theme" do
-		yml = YAML::load_file("/Users/blake/repo/lanyon-io/test_repo/_config.yml")
+		yml = YAML::load_file("#{@path}/#{@org}/#{@name}/_config.yml")
 		expect(yml['title']).to eq 'Hyde'
 	end
 
@@ -19,6 +22,6 @@ describe LocalRepo do
 	end
 
 	after do
-		FileUtils.rm_rf('/Users/blake/repo/lanyon-io/test_repo')
+		FileUtils.rm_rf("#{@path}/#{@org}/#{@name}")
 	end
 end

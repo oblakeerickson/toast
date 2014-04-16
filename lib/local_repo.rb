@@ -1,8 +1,8 @@
 class LocalRepo
 
-	def initialize(name)
-		@org = 'lanyon-io'
-		@path = '/Users/blake/repo/'
+	def initialize(path, org, name)
+		@org = org
+		@path = path
 		@theme = 'git@github.com:poole/hyde.git'
 		@g = create name
 	end
@@ -21,4 +21,3 @@ class LocalRepo
 		"#{@path}/#{@org}/#{name}"
 	end
 end
-

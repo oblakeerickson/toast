@@ -19,11 +19,10 @@ class Baseurl
 		file = File.open("#{@full_path}/_includes/head.html", 'w')
 
 		contents.each do |line|
-			if line.include? "poole.css"
-				file.write('<link rel="stylesheet" href="{{ site.baseurl }}/public/css/poole.css">')
-			else
-				file.write(line)
+			if line.include? 'href='
+				line.sub! 'href="', 'href="{{ site.baseurl }}'
 			end
+			file.write(line)
 		end
 
 		file.close
