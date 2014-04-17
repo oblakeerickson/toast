@@ -22,6 +22,6 @@ describe Connection do
 
   it "returns the username in the .username file" do
   	username = @connection.username
-  	expect(username).to eq Lanyon::Application.config.github_username
+  	expect(username).to eq OrEquals::Application.config.github_username
   end
 end

@@ -25,10 +25,10 @@ class Connection
   private
 
   def get_username
-    Lanyon::Application.config.github_username
+    OrEquals::Application.config.github_username
   end
 
   def get_password
-    Lanyon::Application.config.github_password
+    OrEquals::Application.config.github_password
   end
 end

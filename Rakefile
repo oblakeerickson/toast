@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Lanyon::Application.load_tasks
+OrEquals::Application.load_tasks

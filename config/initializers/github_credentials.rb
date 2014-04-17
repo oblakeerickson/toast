@@ -7,5 +7,5 @@ def get_password
   File.read(password_file).chomp
 end
 
-Lanyon::Application.config.github_username = get_username
-Lanyon::Application.config.github_password = get_password
+OrEquals::Application.config.github_username = get_username
+OrEquals::Application.config.github_password = get_password
