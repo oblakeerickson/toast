@@ -25,10 +25,10 @@ class Connection
   private
 
   def get_username
-    OrEquals::Application.config.github_username
+    Toast::Application.config.github_username
   end
 
   def get_password
-    OrEquals::Application.config.github_password
+    Toast::Application.config.github_password
   end
 end

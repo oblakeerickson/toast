@@ -24,4 +24,4 @@ def secure_token
   end
 end
 
-OrEquals::Application.config.secret_key_base = secure_token
+Toast::Application.config.secret_key_base = secure_token

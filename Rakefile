@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-OrEquals::Application.load_tasks
+Toast::Application.load_tasks

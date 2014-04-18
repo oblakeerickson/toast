@@ -7,5 +7,5 @@ def get_password
   File.read(password_file).chomp
 end
 
-OrEquals::Application.config.github_username = get_username
-OrEquals::Application.config.github_password = get_password
+Toast::Application.config.github_username = get_username
+Toast::Application.config.github_password = get_password
