@@ -127,6 +127,168 @@ describe Baseurl do
 		expect(status).to be true
 	end
 
+	it "changes the home page link line" do
+		status = false
+		syntax = @baseurl.change_sidebar
+		contents = IO.readlines("#{@path}/#{@org}/#{@name}/_includes/sidebar.html")
+		file = File.open("#{@path}/#{@org}/#{@name}/_includes/sidebar.html", 'w')
+
+		contents.each do |line|
+			if line.include? ">Home</a>"
+				if line.include? "baseurl"
+					status = true
+				end
+			end
+		end
+
+		file.close
+		expect(status).to be true
+	end
+
+	it "changes the note.title line" do
+		status = false
+		syntax = @baseurl.change_sidebar
+		contents = IO.readlines("#{@path}/#{@org}/#{@name}/_includes/sidebar.html")
+		file = File.open("#{@path}/#{@org}/#{@name}/_includes/sidebar.html", 'w')
+
+		contents.each do |line|
+			if line.include? "{{ node.title }}"
+				if line.include? "{{ site.baseurl }}"
+					status = true
+				end
+			end
+		end
+
+		file.close
+		expect(status).to be true
+	end
+
+	it "changes the note.title line" do
+		status = false
+		syntax = @baseurl.change_sidebar
+		contents = IO.readlines("#{@path}/#{@org}/#{@name}/_includes/sidebar.html")
+		file = File.open("#{@path}/#{@org}/#{@name}/_includes/sidebar.html", 'w')
+
+		contents.each do |line|
+			if line.include? "{{ node.title }}"
+				if line.include? "{{ site.baseurl }}"
+					status = true
+				end
+			end
+		end
+
+		file.close
+		expect(status).to be true
+	end
+
+	it "changes the post url line" do
+		status = false
+		syntax = @baseurl.change_post_layout
+		contents = IO.readlines("#{@path}/#{@org}/#{@name}/_layouts/post.html")
+		file = File.open("#{@path}/#{@org}/#{@name}/_layouts/post.html", 'w')
+
+		contents.each do |line|
+			if line.include? "{{ post.url }}"
+				if line.include? "{{ site.baseurl }}"
+					status = true
+				end
+			end
+		end
+
+		file.close
+		expect(status).to be true
+	end
+
+	it "changes the post url line" do
+		status = false
+		syntax = @baseurl.change_post_layout
+		contents = IO.readlines("#{@path}/#{@org}/#{@name}/_layouts/post.html")
+		file = File.open("#{@path}/#{@org}/#{@name}/_layouts/post.html", 'w')
+
+		contents.each do |line|
+			if line.include? "{{ post.url }}"
+				if line.include? "{{ site.baseurl }}"
+					status = true
+				end
+			end
+		end
+
+		file.close
+		expect(status).to be true
+	end
+
+	it "changes the index post url line" do
+		status = false
+		syntax = @baseurl.change_index
+		contents = IO.readlines("#{@path}/#{@org}/#{@name}/index.html")
+		file = File.open("#{@path}/#{@org}/#{@name}/index.html", 'w')
+
+		contents.each do |line|
+			if line.include? "{{ post.url }}"
+				if line.include? "{{ site.baseurl }}"
+					status = true
+				end
+			end
+		end
+
+		file.close
+		expect(status).to be true
+	end
+
+	it "changes the pagination next line" do
+		status = false
+		syntax = @baseurl.change_index
+		contents = IO.readlines("#{@path}/#{@org}/#{@name}/index.html")
+		file = File.open("#{@path}/#{@org}/#{@name}/index.html", 'w')
+
+		contents.each do |line|
+			if line.include? "{{paginator.next_page}}"
+				if line.include? "{{ site.baseurl }}"
+					status = true
+				end
+			end
+		end
+
+		file.close
+		expect(status).to be true
+	end
+
+	it "changes the pagination previous line" do
+		status = false
+		syntax = @baseurl.change_index
+		contents = IO.readlines("#{@path}/#{@org}/#{@name}/index.html")
+		file = File.open("#{@path}/#{@org}/#{@name}/index.html", 'w')
+
+		contents.each do |line|
+			if line.include? "{{paginator.previous_page}}"
+				if line.include? "{{ site.baseurl }}"
+					status = true
+				end
+			end
+		end
+
+		file.close
+		expect(status).to be true
+	end
+
+	it "changes the pagination newer line" do
+		status = false
+		syntax = @baseurl.change_index
+		contents = IO.readlines("#{@path}/#{@org}/#{@name}/index.html")
+		file = File.open("#{@path}/#{@org}/#{@name}/index.html", 'w')
+
+		contents.each do |line|
+			if line.include? '/">Newer</a>'
+				if line.include? "{{ site.baseurl }}"
+					status = true
+				end
+			end
+		end
+
+		file.close
+		expect(status).to be true
+	end
+
 	after do
 		FileUtils.rm_f("#{@path}/#{@org}/#{@name}/_config.yml")
 		FileUtils.rm_rf("#{@path}/#{@org}/#{@name}")
