@@ -28,6 +28,21 @@ class Baseurl
 		file.close
 	end
 
+	def change_sidebar
+		contents = IO.readlines("#{@full_path}/_includes/sidebar.html")
+
+		file = File.open("#{@full_path}/_includes/sidebar.html", 'w')
+
+		contents.each do |line|
+			if line.include? 'href='
+				line.sub! 'href="', 'href="{{ site.baseurl }}'
+			end
+			file.write(line)
+		end
+
+		file.close
+	end
+
 	private
 
 	def load
