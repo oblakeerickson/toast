@@ -1,51 +1,16 @@
-== README
+# Toast
 
+Toast is a Ruby on Rails frontend for creating static websites with Jekyll that can be automatically hosted for free on GitHub Pages.
 
+Toast removes the barrier entry for creating a static site because you won't need to install Ruby, Jekyll, or have knowledge of Git to create a blog. All you need to do is sign up for an account, and click 'Create Site' and you will immediately be able to see your newly created website with sample posts.
 
-## TODO
+Toast is currently in the early stages of development and there isn't a place to sign up yet.
 
-+ create github org
-+ create new repo
-+ clone repo
-+ create gh-pages branch
-+ create jekyll blog
-+ change default theme
-+ fix base-url
-   + add baseurl to _config.yml
-   ~ add baseurl to css links
-   - add baseurl to title link
-   - add baseurl to home page link
-   - add baseurl to posts link in index.html
-+ push repo to GitHub
-- buy domain name
-- create email address
-- create github account
-- create sample content to replace default theme content
-- clone actual repo when testing adding baseurl to each file
+## Local Development
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* Fork this repo
+* Clone to your development computer
+* Create a `.password` and a `.username` file in the project root for your GitHub credentials (this process needs to be changed).
+* Create a GitHub organization that will host the test sites it will create
+* Change the source code where this test org is mentioned (this process also needs to be changed)
+* Run the tests with `rspec spec`.
